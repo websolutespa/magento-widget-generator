@@ -1,0 +1,34 @@
+/*
+ * Copyright © Websolute spa. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+.widget-visibility {
+    display: none;
+}
+
+//
+//  Mobile
+//  _____________________________________________
+@media (max-width: @screen__s) {
+    .widget-visible-mobile {
+        display: block;
+    }
+}
+
+//
+//  Tablet
+//  _____________________________________________
+@media (min-width: @screen__s) and (max-width: @screen__l) {
+    .widget-visible-tablet {
+        display: block;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+@media (min-width: @screen__l) {
+    .widget-visible-desktop {
+        display: block;
+    }
+}
