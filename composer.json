@@ -3,7 +3,8 @@
     "description": "Websolute Magento 2 Widget Generator",
     "type": "magento2-module",
     "require": {
-        "magento/framework": "*"
+        "magento/framework": "*",
+        "websolutespa/magento-widget-extra-fields": "^1.0"
     },
     "license": [
         "OSL-3.0"
