@@ -27,7 +27,7 @@ class CategoryList extends Widget
     /**
      * @var CategoryRepositoryInterface
      */
-    private CategoryRepositoryInterface $categoryRepository;
+    private $categoryRepository;
 
     public function __construct(
         Context $context,

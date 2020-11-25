@@ -47,56 +47,56 @@ class ProductList extends Widget
     /**
      * @var \Magento\Framework\App\Http\Context
      */
-    protected \Magento\Framework\App\Http\Context $httpContext;
+    protected $httpContext;
 
     /**
      * Product collection factory
      *
      * @var CollectionFactory
      */
-    protected CollectionFactory $productCollectionFactory;
+    protected $productCollectionFactory;
 
     /**
      * @var Builder
      */
-    protected Builder $sqlBuilder;
+    protected $sqlBuilder;
 
     /**
      * @var Rule
      */
-    protected Rule $rule;
+    protected $rule;
 
     /**
      * @var Conditions
      */
-    protected Conditions $conditionsHelper;
+    protected $conditionsHelper;
 
     /**
      * Catalog config
      *
      * @var Config
      */
-    protected Config $catalogConfig;
+    protected $catalogConfig;
 
     /**
      * @var Cart
      */
-    protected Cart $cartHelper;
+    protected $cartHelper;
 
     /**
      * @var SerializerInterface
      */
-    private SerializerInterface $serializer;
+    private $serializer;
 
     /**
      * @var ImageBuilder
      */
-    private ImageBuilder $imageBuilder;
+    private $imageBuilder;
 
     /**
      * @var ScopeConfigInterface
      */
-    private ScopeConfigInterface $scopeConfig;
+    private $scopeConfig;
 
     /**
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
@@ -408,7 +408,8 @@ class ProductList extends Widget
 
     private function addProductAttributesAndPrices(
         Collection $collection
-    ) {
+    )
+    {
         return $collection
             ->addMinimalPrice()
             ->addFinalPrice()

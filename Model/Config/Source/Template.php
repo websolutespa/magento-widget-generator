@@ -16,7 +16,7 @@ class Template implements OptionSourceInterface
     /**
      * @var TemplatesPool
      */
-    private TemplatesPool $templatesPool;
+    private $templatesPool;
 
     /**
      * @param TemplatesPool $templatesPool

@@ -27,27 +27,27 @@ class Widget extends Template implements BlockInterface
     /**
      * @var TemplatesPoolInterface
      */
-    private TemplatesPoolInterface $templatesPool;
+    private $templatesPool;
 
     /**
      * @var WidgetGeneratorTemplate
      */
-    private WidgetGeneratorTemplate $templateFromPool;
+    private $templateFromPool;
 
     /**
      * @var string
      */
-    private string $mediaBaseUrl;
+    private $mediaBaseUrl;
 
     /**
      * @var DecoderInterface
      */
-    private DecoderInterface $decoder;
+    private $decoder;
 
     /**
      * @var UriInterface
      */
-    private UriInterface $uri;
+    private $uri;
 
     /**
      * @param Context $context
