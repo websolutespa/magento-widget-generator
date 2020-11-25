@@ -4,7 +4,7 @@
     "type": "magento2-module",
     "require": {
         "magento/framework": "*",
-        "websolutespa/magento-widget-extra-fields": "^1.0"
+        "websolutespa/magento-widget-image-chooser": "^1.0"
     },
     "license": [
         "OSL-3.0"
