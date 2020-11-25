@@ -126,9 +126,11 @@ class Widget extends Template implements BlockInterface
             }
         }
 
+        /** @codingStandardsIgnoreStart */
         if (array_key_exists('scheme', parse_url($value))) {
             return $value;
         }
+        /** @codingStandardsIgnoreEnd */
 
         return $this->getMediaBaseUrl() . $value;
     }
