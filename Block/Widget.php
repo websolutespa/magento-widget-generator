@@ -20,7 +20,6 @@ use Magento\Widget\Block\BlockInterface;
 use Websolute\WidgetGenerator\Model\Template\Template as WidgetGeneratorTemplate;
 use Websolute\WidgetGenerator\Model\TemplatesPool\TemplatesPoolInterface;
 use Websolute\WidgetGenerator\Model\Visibility;
-use Zend\Uri\UriInterface;
 
 class Widget extends Template implements BlockInterface
 {
@@ -45,27 +44,19 @@ class Widget extends Template implements BlockInterface
     private $decoder;
 
     /**
-     * @var UriInterface
-     */
-    private $uri;
-
-    /**
      * @param Context $context
      * @param TemplatesPoolInterface $templatesPool
      * @param DecoderInterface $decoder
-     * @param UriInterface $uri
      * @param array $data
      */
     public function __construct(
         Context $context,
         TemplatesPoolInterface $templatesPool,
         DecoderInterface $decoder,
-        UriInterface $uri,
         array $data = []
     ) {
         $this->templatesPool = $templatesPool;
         $this->decoder = $decoder;
-        $this->uri = $uri;
         parent::__construct($context, $data);
     }
 
@@ -122,7 +113,12 @@ class Widget extends Template implements BlockInterface
     public function getImageUrl(string $value): string
     {
         if (strpos($value, '___directive') !== 0) {
-            $url = strstr(substr($value, strpos($value, '___directive/') + strlen('___directive/')), '/key', true);
+            $url = strstr(
+                substr($value, strpos($value, '___directive/') +
+                    strlen('___directive/')),
+                '/key',
+                true
+            );
             $url = $this->decoder->decode($url);
 
             if (false !== strpos($url, '{{media')) {
@@ -130,7 +126,7 @@ class Widget extends Template implements BlockInterface
             }
         }
 
-        if ($this->uri->parse($value)->getScheme()) {
+        if (array_key_exists('scheme', parse_url($value))) {
             return $value;
         }
 
@@ -152,6 +148,20 @@ class Widget extends Template implements BlockInterface
             }
         }
         return $this->mediaBaseUrl;
+    }
+
+    /**
+     * @param string|null $value
+     * @return string|null
+     */
+    public function htmlEntityDecode(string $value = null): ?string
+    {
+        if ($value === null) {
+            return null;
+        }
+        /** @codingStandardsIgnoreStart */
+        return html_entity_decode($value);
+        /** @codingStandardsIgnoreEnd */
     }
 
     /**
