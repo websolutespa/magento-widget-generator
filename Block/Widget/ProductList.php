@@ -47,56 +47,56 @@ class ProductList extends Widget
     /**
      * @var \Magento\Framework\App\Http\Context
      */
-    protected $httpContext;
+    protected \Magento\Framework\App\Http\Context $httpContext;
 
     /**
      * Product collection factory
      *
      * @var CollectionFactory
      */
-    protected $productCollectionFactory;
+    protected CollectionFactory $productCollectionFactory;
 
     /**
      * @var Builder
      */
-    protected $sqlBuilder;
+    protected Builder $sqlBuilder;
 
     /**
      * @var Rule
      */
-    protected $rule;
+    protected Rule $rule;
 
     /**
      * @var Conditions
      */
-    protected $conditionsHelper;
+    protected Conditions $conditionsHelper;
 
     /**
      * Catalog config
      *
      * @var Config
      */
-    protected $catalogConfig;
+    protected Config $catalogConfig;
 
     /**
      * @var Cart
      */
-    protected $cartHelper;
+    protected Cart $cartHelper;
 
     /**
      * @var SerializerInterface
      */
-    private $serializer;
+    private SerializerInterface $serializer;
 
     /**
      * @var ImageBuilder
      */
-    private $imageBuilder;
+    private ImageBuilder $imageBuilder;
 
     /**
      * @var ScopeConfigInterface
      */
-    private $scopeConfig;
+    private ScopeConfigInterface $scopeConfig;
 
     /**
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)

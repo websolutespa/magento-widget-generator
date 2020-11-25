@@ -22,12 +22,12 @@ class Category extends Widget
     /**
      * @var CategoryInterface
      */
-    private $category;
+    private CategoryInterface $category;
 
     /**
      * @var CategoryRepositoryInterface
      */
-    private $categoryRepository;
+    private CategoryRepositoryInterface $categoryRepository;
 
     /**
      * @param Context $context

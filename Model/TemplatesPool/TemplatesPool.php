@@ -16,7 +16,7 @@ class TemplatesPool implements TemplatesPoolInterface
     /**
      * @var array $templates
      */
-    private $templates = [];
+    private array $templates = [];
 
     /**
      * @param array $templateArray
