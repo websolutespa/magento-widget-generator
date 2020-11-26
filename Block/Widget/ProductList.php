@@ -25,6 +25,7 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Pricing\Render;
 use Magento\Framework\Serialize\SerializerInterface;
+use Magento\Framework\Url\DecoderInterface;
 use Magento\Rule\Model\Condition\Combine;
 use Magento\Rule\Model\Condition\Sql\Builder;
 use Magento\Store\Model\ScopeInterface;
@@ -127,6 +128,7 @@ class ProductList extends Widget
         SerializerInterface $serializer,
         ScopeConfigInterface $scopeConfig,
         Cart $cartHelper,
+        DecoderInterface $decoder,
         array $data = []
     ) {
         $this->productCollectionFactory = $productCollectionFactory;
@@ -141,6 +143,7 @@ class ProductList extends Widget
         parent::__construct(
             $context,
             $templatesPool,
+            $decoder,
             $data
         );
         $this->imageBuilder = $imageBuilder;
