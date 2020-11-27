@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Copyright © Websolute spa. All rights reserved.
  * See COPYING.txt for license details.
  */

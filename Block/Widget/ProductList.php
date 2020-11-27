@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Copyright © Websolute spa. All rights reserved.
  * See COPYING.txt for license details.
  */
@@ -411,8 +411,7 @@ class ProductList extends Widget
 
     private function addProductAttributesAndPrices(
         Collection $collection
-    )
-    {
+    ) {
         return $collection
             ->addMinimalPrice()
             ->addFinalPrice()
