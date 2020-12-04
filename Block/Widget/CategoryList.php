@@ -13,6 +13,7 @@ use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Catalog\Model\Category;
 use Magento\Catalog\Model\ResourceModel\Category\Collection;
 use Magento\Framework\Exception\NoSuchEntityException;
+use Magento\Framework\Url\DecoderInterface;
 use RuntimeException;
 use Websolute\WidgetGenerator\Block\Widget;
 use Websolute\WidgetGenerator\Model\TemplatesPool\TemplatesPoolInterface;
@@ -33,11 +34,13 @@ class CategoryList extends Widget
         Context $context,
         TemplatesPoolInterface $templatesPool,
         CategoryRepositoryInterface $categoryRepository,
+        DecoderInterface $decoder,
         array $data = []
     ) {
         parent::__construct(
             $context,
             $templatesPool,
+            $decoder,
             $data
         );
         $this->categoryRepository = $categoryRepository;

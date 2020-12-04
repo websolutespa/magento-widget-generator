@@ -13,6 +13,7 @@ use Magento\Backend\Block\Template\Context;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Catalog\Api\Data\CategoryInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
+use Magento\Framework\Url\DecoderInterface;
 use RuntimeException;
 use Websolute\WidgetGenerator\Block\Widget;
 use Websolute\WidgetGenerator\Model\TemplatesPool\TemplatesPoolInterface;
@@ -33,18 +34,21 @@ class Category extends Widget
      * @param Context $context
      * @param TemplatesPoolInterface $templatesPool
      * @param CategoryRepositoryInterface $categoryRepository
+     * @param DecoderInterface $decoder
      * @param array $data
      */
     public function __construct(
         Context $context,
         TemplatesPoolInterface $templatesPool,
         CategoryRepositoryInterface $categoryRepository,
+        DecoderInterface $decoder,
         array $data = []
     ) {
         $this->categoryRepository = $categoryRepository;
         parent::__construct(
             $context,
             $templatesPool,
+            $decoder,
             $data
         );
     }

@@ -113,6 +113,7 @@ class ProductList extends Widget
      * @param SerializerInterface $serializer
      * @param ScopeConfigInterface $scopeConfig
      * @param Cart $cartHelper
+     * @param DecoderInterface $decoder
      * @param array $data
      */
     public function __construct(
