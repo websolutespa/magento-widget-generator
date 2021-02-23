@@ -112,8 +112,7 @@ class Widget extends Template implements BlockInterface
      */
     public function getImageUrl(string $value): string
     {
-        if (!array_key_exists('path', parse_url($value)) &&
-            strpos($value, '___directive') !== 0) {
+        if (strpos($value, '___directive') > 0) {
             $url = strstr(
                 substr($value, strpos($value, '___directive/') +
                     strlen('___directive/')),
