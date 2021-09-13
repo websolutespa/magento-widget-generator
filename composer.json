@@ -1,7 +1,6 @@
 {
     "name": "websolutespa/magento-widget-generator",
     "description": "Websolute Magento 2 Widget Generator",
-    "type": "magento2-module",
     "require": {
         "magento/framework": "*",
         "websolutespa/magento-widget-image-chooser": "^1.0"
